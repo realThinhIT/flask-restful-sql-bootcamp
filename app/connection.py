@@ -15,6 +15,7 @@ class Connection:
     def get_connection(self):
         if self.__connection is None:
             self.__connection = sqlite3.connect('database.db')
+            self.__connection.row_factory = sqlite3.Row
         else:
             return self.__connection
 
